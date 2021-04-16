@@ -1,0 +1,62 @@
+CREATE TABLE Customer (
+  cid INTEGER AUTO_INCREMENT PRIMARY KEY,
+  email CHAR(100) NOT NULL,
+  password CHAR(50) NOT NULL,
+  first_name CHAR(50) NOT NULL,
+  last_name CHAR(50) NOT NULL,
+  `address` CHAR(150) NOT NULL,
+  age TINYINT,
+  gender ENUM('male', 'female', 'other'),
+);
+
+CREATE TABLE Author (
+  author_id INTEGER AUTO_INCREMENT PRIMARY KEY,
+  first_name CHAR(50) NOT NULL,
+  last_name CHAR(50) NOT NULL,
+);
+
+CREATE TABLE Publisher (
+  publisher_id INTEGER AUTO_INCREMENT PRIMARY KEY,
+  publisher_name CHAR(100) NOT NULL
+);
+
+CREATE TABLE Category (
+  category_id INTEGER AUTO_INCREMENT PRIMARY KEY,
+  category_name CHAR(150) NOT NULL,
+  safe_for_work BOOLEAN
+);
+
+CREATE TABLE Book (
+  bid INTEGER AUTO_INCREMENT PRIMARY KEY,
+  title CHAR(150) NOT NULL,
+  author_id INTEGER,
+  publisher_id INTEGER,
+  unit_price DECIMAL(13, 2),
+  FOREIGN KEY (author_id) REFERENCES Author (author_id),
+  FOREIGN KEY (publisher_id) REFERENCES Publisher (publisher_id)
+);
+
+CREATE TABLE Order (
+  order_number INTEGER AUTO_INCREMENT PRIMARY KEY,
+  cid INTEGER NOT NULL,
+  order_date DATE,
+  total_cost DECIMAL(13, 2),
+  FOREIGN KEY (cid) REFERENCES Customer (cid)
+);
+
+CREATE TABLE Book_to_Order (
+  bid INTEGER NOT NULL,
+  order_number NOT NULL,
+  count_ordered TINYINT
+  PRIMARY KEY (bid, order_number),
+  FOREIGN KEY (bid) REFERENCES Book (bid),
+  FOREIGN KEY (order_number) Order (order_number)
+);
+
+CREATE TABLE Book_to_Category (
+  bid INTEGER NOT NULL,
+  category_id INTEGER NOT NULL,
+  PRIMARY KEY (bid, category_id),
+  FOREIGN KEY (bid) REFERENCES Book (bid),
+  FOREIGN KEY (category_id) REFERENCES Category(category_id)
+);
