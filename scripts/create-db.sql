@@ -1,3 +1,6 @@
+CREATE DATABASE lucidshop;
+USE lucidshop;
+
 CREATE TABLE Customer (
   cid INTEGER AUTO_INCREMENT PRIMARY KEY,
   email CHAR(100) NOT NULL,
