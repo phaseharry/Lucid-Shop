@@ -9,13 +9,13 @@ CREATE TABLE Customer (
   last_name CHAR(50) NOT NULL,
   `address` CHAR(150) NOT NULL,
   age TINYINT,
-  gender ENUM('male', 'female', 'other'),
+  gender ENUM('male', 'female', 'other')
 );
 
 CREATE TABLE Author (
   author_id INTEGER AUTO_INCREMENT PRIMARY KEY,
   first_name CHAR(50) NOT NULL,
-  last_name CHAR(50) NOT NULL,
+  last_name CHAR(50) NOT NULL
 );
 
 CREATE TABLE Publisher (
@@ -39,7 +39,7 @@ CREATE TABLE Book (
   FOREIGN KEY (publisher_id) REFERENCES Publisher (publisher_id)
 );
 
-CREATE TABLE Order (
+CREATE TABLE `Order` (
   order_number INTEGER AUTO_INCREMENT PRIMARY KEY,
   cid INTEGER NOT NULL,
   order_date DATE,
@@ -49,11 +49,11 @@ CREATE TABLE Order (
 
 CREATE TABLE Book_to_Order (
   bid INTEGER NOT NULL,
-  order_number NOT NULL,
-  count_ordered TINYINT
+  order_number INTEGER NOT NULL,
+  count_ordered TINYINT,
   PRIMARY KEY (bid, order_number),
   FOREIGN KEY (bid) REFERENCES Book (bid),
-  FOREIGN KEY (order_number) Order (order_number)
+  FOREIGN KEY (order_number) REFERENCES `Order` (order_number)
 );
 
 CREATE TABLE Book_to_Category (
