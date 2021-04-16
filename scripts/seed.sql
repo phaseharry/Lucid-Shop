@@ -124,14 +124,14 @@ INSERT INTO Book_to_Category (bid, category_id) VALUES (18, 4);
 
 -- Orders
 -- Harry's orders
-INSERT INTO Order (order_number, cid, order_date, total_cost) VALUES (1, 1, 2021-04-01, 145.95);
-INSERT INTO Order (order_number, cid, order_date, total_cost) VALUES (2, 1, 2020-12-23, 78.99);
+INSERT INTO `Order` (order_number, cid, order_date, total_cost) VALUES (1, 1, '2021-04-01', 145.95);
+INSERT INTO `Order` (order_number, cid, order_date, total_cost) VALUES (2, 1, '2020-12-23', 78.99);
 -- Raymond's orders
-INSERT INTO Order (order_number, cid, order_date, total_cost) VALUES (3, 2, 2019-01-31, 149.93);
-INSERT INTO Order (order_number, cid, order_date, total_cost) VALUES (4, 2, 2020-02-15, 24.99);
+INSERT INTO `Order` (order_number, cid, order_date, total_cost) VALUES (3, 2, '2019-01-31', 149.93);
+INSERT INTO `Order` (order_number, cid, order_date, total_cost) VALUES (4, 2, '2020-02-15', 24.99);
 -- Yu Meng's orders
-INSERT INTO Order (order_number, cid, order_date, total_cost) VALUES (5, 3, 2021-04-01, 74.97);
-INSERT INTO Order (order_number, cid, order_date, total_cost) VALUES (6, 3, 2020-12-23, 71.97);
+INSERT INTO `Order` (order_number, cid, order_date, total_cost) VALUES (5, 3, '2021-04-01', 74.97);
+INSERT INTO `Order` (order_number, cid, order_date, total_cost) VALUES (6, 3, '2020-12-23', 71.97);
 
 -- Book_to_Order
 -- order 1
