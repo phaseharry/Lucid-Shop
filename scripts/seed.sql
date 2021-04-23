@@ -8,7 +8,7 @@ INSERT INTO Customer (cid, email, password, first_name, last_name, `address`, ag
 VALUES (2, 'raymondyu@icloud.com', 'Pa$$w0rd', 'Raymond', 'Yu', '882 Jessica Plains 00163', 21, 'male');
 
 INSERT INTO Customer (cid, email, password, first_name, last_name, `address`, age, gender) 
-VALUES (3, 'yumeng@gmail.com', '!Swordfish1', 'Yu', 'Meng', '405 Gutmann Spur 34057-6397', 21, 'female');
+VALUES (3, 'yumeng@gmail.com', '!Swordfish1', 'Yumeng', 'Shao', '405 Gutmann Spur 34057-6397', 21, 'female');
 
 -- creating authors
 INSERT INTO Author (author_id, first_name, last_name) VALUES (1, 'Barack', 'Obama');
