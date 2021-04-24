@@ -32,6 +32,7 @@ CREATE TABLE Category (
 CREATE TABLE Book (
   bid INTEGER AUTO_INCREMENT PRIMARY KEY,
   title CHAR(150) NOT NULL,
+  img_url TEXT,
   author_id INTEGER,
   publisher_id INTEGER,
   unit_price DECIMAL(13, 2),

@@ -36,28 +36,28 @@ INSERT INTO Category (category_id, category_name, safe_for_work) VALUES (6, 'Fan
 
 -- creating books
 -- Barack Obama
-INSERT INTO Book (bid, title, author_id, publisher_id, unit_price) VALUES (1, 'A Promised Land', 1, 1, 45.00);
-INSERT INTO Book (bid, title, author_id, publisher_id, unit_price) VALUES (2, 'Dreams from My Father: A Story of Race and Inheritance', 1, 2, 18.99);
-INSERT INTO Book (bid, title, author_id, publisher_id, unit_price) VALUES (3, 'The Audacity of Hope: Thoughts on Reclaiming the American Dream', 1, 3, 17.00);
-INSERT INTO Book (bid, title, author_id, publisher_id, unit_price) VALUES (4, 'Of Thee I Sing', 1, 4, 10.98);
+INSERT INTO Book (bid, title, img_url, author_id, publisher_id, unit_price) VALUES (1, 'A Promised Land', 'https://images-na.ssl-images-amazon.com/images/I/41L5qgUW2fL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg',1, 1, 45.00);
+INSERT INTO Book (bid, title, img_url, author_id, publisher_id, unit_price) VALUES (2, 'Dreams from My Father: A Story of Race and Inheritance', 'https://images-na.ssl-images-amazon.com/images/I/51TdV+4rjSL._SY344_BO1,204,203,200_.jpg',1, 2, 18.99);
+INSERT INTO Book (bid, title, img_url, author_id, publisher_id, unit_price) VALUES (3, 'The Audacity of Hope: Thoughts on Reclaiming the American Dream', 'https://images-na.ssl-images-amazon.com/images/I/51zkB73i0GL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg',1, 3, 17.00);
+INSERT INTO Book (bid, title, img_url, author_id, publisher_id, unit_price) VALUES (4, 'Of Thee I Sing', 'https://images-na.ssl-images-amazon.com/images/I/51DEuSxmwSL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg',1, 4, 10.98);
 -- Michelle Obama
-INSERT INTO Book (bid, title, author_id, publisher_id, unit_price) VALUES (5, 'Becoming', 2, 1, 18.99);
-INSERT INTO Book (bid, title, author_id, publisher_id, unit_price) VALUES (6, 'American Grown', 2, 1, 30.00);
+INSERT INTO Book (bid, title, img_url, author_id, publisher_id, unit_price) VALUES (5, 'Becoming', 'https://images-na.ssl-images-amazon.com/images/I/41dsMrDb-nL._SX328_BO1,204,203,200_.jpg', 2, 1, 18.99);
+INSERT INTO Book (bid, title, img_url, author_id, publisher_id, unit_price) VALUES (6, 'American Grown', 'https://images-na.ssl-images-amazon.com/images/I/61kstxYrJSL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg', 2, 1, 30.00);
 -- Dr.Seuss
-INSERT INTO Book (bid, title, author_id, publisher_id, unit_price) VALUES (7, 'Green Eggs and Ham', 3, 5, 17.99);
-INSERT INTO Book (bid, title, author_id, publisher_id, unit_price) VALUES (8, 'The Cat and the Hat', 3, 5, 17.99);
-INSERT INTO Book (bid, title, author_id, publisher_id, unit_price) VALUES (9, 'The Lorax', 3, 5, 17.99);
-INSERT INTO Book (bid, title, author_id, publisher_id, unit_price) VALUES (10, 'Horton Hears a Who!', 3, 5, 17.99);
+INSERT INTO Book (bid, title, img_url, author_id, publisher_id, unit_price) VALUES (7, 'Green Eggs and Ham', 'https://images-na.ssl-images-amazon.com/images/I/51LO6d10iVL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg', 3, 5, 17.99);
+INSERT INTO Book (bid, title, img_url, author_id, publisher_id, unit_price) VALUES (8, 'The Cat and the Hat', 'https://images-na.ssl-images-amazon.com/images/I/51NpGEKBQoL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg', 3, 5, 17.99);
+INSERT INTO Book (bid, title, img_url, author_id, publisher_id, unit_price) VALUES (9, 'The Lorax', 'https://images-na.ssl-images-amazon.com/images/I/518OcsKKgOL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg', 3, 5, 17.99);
+INSERT INTO Book (bid, title, img_url, author_id, publisher_id, unit_price) VALUES (10, 'Horton Hears a Who!', 'https://images-na.ssl-images-amazon.com/images/I/51Ssd9G9pnL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg', 3, 5, 17.99);
 -- J.K Rowling 
-INSERT INTO Book (bid, title, author_id, publisher_id, unit_price) VALUES (11, "Harry Potter and the Sorcerer's Stong", 4, 6, 24.99);
-INSERT INTO Book (bid, title, author_id, publisher_id, unit_price) VALUES (12, "Harry Potter and the Chamber of Secrets", 4, 6, 24.99);
-INSERT INTO Book (bid, title, author_id, publisher_id, unit_price) VALUES (13, "Harry Potter and the Prisoner of Azkban", 4, 6, 24.99);
-INSERT INTO Book (bid, title, author_id, publisher_id, unit_price) VALUES (14, "Harry Potter and the Goblet of Fire", 4, 6, 24.99);
-INSERT INTO Book (bid, title, author_id, publisher_id, unit_price) VALUES (15, "Harry Potter and the Order of the Phoenix", 4, 6, 24.99);
-INSERT INTO Book (bid, title, author_id, publisher_id, unit_price) VALUES (16, "Harry Potter and the Half-Blood Prince", 4, 6, 24.99);
-INSERT INTO Book (bid, title, author_id, publisher_id, unit_price) VALUES (17, "Harry Potter and the Deathly Hallows", 4, 6, 24.99);
+INSERT INTO Book (bid, title, img_url, author_id, publisher_id, unit_price) VALUES (11, "Harry Potter and the Sorcerer's Stong", 'https://images-na.ssl-images-amazon.com/images/I/51HSkTKlauL._SX346_BO1,204,203,200_.jpg', 4, 6, 24.99);
+INSERT INTO Book (bid, title, img_url, author_id, publisher_id, unit_price) VALUES (12, "Harry Potter and the Chamber of Secrets", 'https://images-na.ssl-images-amazon.com/images/I/51jNORv6nQL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg', 4, 6, 24.99);
+INSERT INTO Book (bid, title, img_url, author_id, publisher_id, unit_price) VALUES (13, "Harry Potter and the Prisoner of Azkban", 'https://images-na.ssl-images-amazon.com/images/I/51O4sQ1jsCL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg', 4, 6, 24.99);
+INSERT INTO Book (bid, title, img_url, author_id, publisher_id, unit_price) VALUES (14, "Harry Potter and the Goblet of Fire", 'https://images-na.ssl-images-amazon.com/images/I/51OORp1XD1L._SX218_BO1,204,203,200_QL40_FMwebp_.jpg', 4, 6, 24.99);
+INSERT INTO Book (bid, title, img_url, author_id, publisher_id, unit_price) VALUES (15, "Harry Potter and the Order of the Phoenix", 'https://images-na.ssl-images-amazon.com/images/I/51b7R-IiOTL._SX338_BO1,204,203,200_.jpg', 4, 6, 24.99);
+INSERT INTO Book (bid, title, img_url, author_id, publisher_id, unit_price) VALUES (16, "Harry Potter and the Half-Blood Prince", 'https://images-na.ssl-images-amazon.com/images/I/51KV4CXARLL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg', 4, 6, 24.99);
+INSERT INTO Book (bid, title, img_url, author_id, publisher_id, unit_price) VALUES (17, "Harry Potter and the Deathly Hallows", 'https://images-na.ssl-images-amazon.com/images/I/51jyI6lYi1L._SX342_BO1,204,203,200_.jpg', 4, 6, 24.99);
 -- F.Scott Fitzgerald
-INSERT INTO Book (bid, title, author_id, publisher_id, unit_price) VALUES (18, "The Great Gatsby", 5, 7, 24.99);
+INSERT INTO Book (bid, title, img_url, author_id, publisher_id, unit_price) VALUES (18, "The Great Gatsby", 'https://images-na.ssl-images-amazon.com/images/I/41XMaCHkrgL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg', 5, 7, 24.99);
 
 -- Book_to_Category
 -- A Promised Land
