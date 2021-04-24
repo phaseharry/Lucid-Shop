@@ -1,5 +1,5 @@
 <?php
-include_once "../dbconnect.inc.php";
+include_once "../dbconnect.php";
 //sanitize function
 function sanitize($str)
 {
