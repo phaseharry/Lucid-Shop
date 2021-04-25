@@ -19,6 +19,7 @@ include "includes/handle_book_search.inc.php";
 			echo "<div>";
 			echo "<h4>" . $b["title"] . "</h4>";
 			echo "<p>Price: " . $b["unit_price"] . "</p>";
+			echo "<p>Author: " . $b["author_name"] . "</p>";
 			echo "<img src='" . $b["img_url"] . "' alt='" . $b["title"] . "'>";
 			echo "</div>";
 		}
