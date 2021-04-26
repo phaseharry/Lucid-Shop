@@ -51,8 +51,8 @@
 					echo "<li><a href=''>Order History</a></li>";
 					echo "<li><a href='#'>Log Out</a></li>";
 				} else {
-					echo "<li><a href='Login.php'>Login</a></li>";
-					echo "<li><a href='SignUp.php'>Sign Up</a></li>";
+					echo "<li><a href='login.php'>Login</a></li>";
+					echo "<li><a href='sign_up.php'>Sign Up</a></li>";
 				}
 				?>
 			</ul>
