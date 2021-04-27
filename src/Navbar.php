@@ -49,7 +49,7 @@
 				<?php
 				if (isset($_COOKIE["user"])) {
 					echo "<li><a href=''>Order History</a></li>";
-					echo "<li><a href='#'>Log Out</a></li>";
+					echo "<li><a href='logout.php'>Log Out</a></li>";
 				} else {
 					echo "<li><a href='login.php'>Login</a></li>";
 					echo "<li><a href='sign_up.php'>Sign Up</a></li>";
