@@ -1,3 +1,7 @@
+<?php
+	include_once "../dbconnect.php";
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -39,7 +43,12 @@
 					<a> Welcome
 						<?php
 						if (isset($_COOKIE["user"])) {
-							echo $_COOKIE["user"];
+							$q = "SELECT * FROM customer WHERE cid =".intval($_COOKIE["user"]);
+							$p = $conn->query($q);
+							$row = mysqli_fetch_array($p);
+
+							echo $row["first_name"];
+							$conn->close();
 						} else {
 							echo "Guest";
 						}
