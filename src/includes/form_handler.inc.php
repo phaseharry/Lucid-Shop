@@ -29,7 +29,7 @@ if ($_POST && isset($_POST['submit'])) {
 
 	if (!empty($rows)) {
 		//set cookie
-		setcookie("user", $rows["first_name"], time() + 3600);
+		setcookie("user", $rows["cid"], time() + 3600);
 		$conn->close();
 		header("Location: Index.php");
 	} else {
