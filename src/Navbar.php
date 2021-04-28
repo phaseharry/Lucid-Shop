@@ -55,6 +55,7 @@
 					echo "<li><a href='sign_up.php'>Sign Up</a></li>";
 				}
 				?>
+				<li><a href='cart.php'>Cart</a></li>
 			</ul>
 		</div>
 	</nav>
