@@ -29,3 +29,14 @@ FROM Publisher P
 JOIN Book B ON P.publisher_id = B.publisher_id
 JOIN Author A ON A.author_id = B.author_id
 WHERE P.publisher_name = "Charles Scribner's Sons";
+
+-- Get all orders regarding a specific customer
+SELECT O.order_number, O.order_date, O.total_cost 
+FROM `Order` O 
+WHERE O.cid = 1;
+
+-- Get all book_to_order that connects an order to a specific book
+SELECT B.title AS "book_title", B.img_url, B.unit_price, BTO.count_ordered
+FROM book_to_order BTO
+JOIN Book B ON BTO.bid = B.bid
+WHERE BTO.order_number = 3;
