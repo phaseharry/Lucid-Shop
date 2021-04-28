@@ -23,23 +23,21 @@ include "includes/handle_book_search.inc.php";
 				<p><?php echo "Author: " . $b["author_name"]; ?></p>
 				<img src='<?php echo $b["img_url"]; ?>' alt='<?php $b["title"] ?>'>
 			</div>
-			<!-- <form action=""> -->
-			<input type='hidden' name='book_id' value='<?php echo $b["bid"]; ?>'>
-			<select class="form-group" name='quantity'>
-				<?php
-				for ($i = 1; $i <= 10; $i++) {
-				?>
-					<option value='<?php echo $i ?>'><?php echo $i ?></option>
-				<?php
-				}
-				?>
-			</select>
-			<button id='<?php echo $b["bid"] ?>' type='button' name="add-to-cart" class="btn btn-default">Add to cart</button>
-			<!-- </form> -->
+			<button id='book_id_<?php echo $b["bid"] ?>' type='button' name="add-to-cart" class="btn btn-default">Add to cart</button>
 			<script type="text/JavaScript">
-				document.getElementById('<?php echo $b["bid"] ?>').addEventListener('click', () => {
-				alert('Added "<?php echo $b["title"] ?>" to your cart');
-			})
+				document.getElementById('book_id_<?php echo $b["bid"] ?>').addEventListener('click', () => {
+					let cart = JSON.parse(localStorage.getItem('lucidCart'));
+					if(!cart) { // if cart does not exist, create it
+						cart = {};
+					}
+					if(!(`book_id_<?php echo $b["bid"] ?>` in cart)) { // if book is not in cart, add its book id to cart and set it equal to 1
+						cart[`book_id_<?php echo $b["bid"] ?>`] = 1;
+					} else {
+						cart[`book_id_<?php echo $b["bid"] ?>`] += 1; // if it is in the cart, increment the count
+					}
+					localStorage.setItem('lucidCart', JSON.stringify(cart));
+					alert(`Added "<?php echo $b["title"] ?>" to your cart`);
+				})
 			</script>
 		<?php
 		}
