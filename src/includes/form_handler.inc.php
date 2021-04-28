@@ -22,16 +22,25 @@ if ($_POST && isset($_POST['submit'])) {
 	$username = sanitize($_POST['username']);
 	$password = sanitize($_POST['password']);
 
-	$q = 'SELECT * FROM customer WHERE email="' . $username . '" AND password="' . $password . '" LIMIT 1';
+	$q = "SELECT first_name, email, cid FROM customer WHERE email = ?  AND password = ? LIMIT 1";
+	$stmt = $conn->prepare($q);
+	$stmt->bind_param("ss", $username, $password);
+	$stmt->execute();
+	$result = $stmt->get_result();
+	$user;
+	if ($result->num_rows == 1) {
+		$user = $result->fetch_all(MYSQLI_ASSOC)[0];
+	}
 
-	$test = $conn->query($q);
-	$rows = mysqli_fetch_array($test);
-
-	if (!empty($rows)) {
+	if (isset($user)) {
+		var_dump($user);
 		//set cookie
-		setcookie("user", $rows["first_name"], time() + 3600);
+		echo $user["email"];
+		setcookie("first_name", $user["first_name"], time() + 3600);
+		setcookie("email", $user["email"], time() + 3600);
+		setcookie("customer_id", $user["cid"], time() + 3600);
 		$conn->close();
-		header("Location: Index.php");
+		header("Location: index.php");
 	} else {
 		$input['username'] = "Incorrect Password or Username!";
 		$input['password'] = "Incorrect Password or Username!";
