@@ -38,8 +38,8 @@
 				<li>
 					<a> Welcome
 						<?php
-						if (isset($_COOKIE["user"])) {
-							echo $_COOKIE["user"];
+						if (isset($_COOKIE["customer_id"])) {
+							echo $_COOKIE["first_name"];
 						} else {
 							echo "Guest";
 						}
@@ -47,8 +47,8 @@
 					</a>
 				</li>
 				<?php
-				if (isset($_COOKIE["user"])) {
-					echo "<li><a href=''>Order History</a></li>";
+				if (isset($_COOKIE["customer_id"])) {
+					echo "<li><a href='order_history.php'>Order History</a></li>";
 					echo "<li><a href='#'>Log Out</a></li>";
 				} else {
 					echo "<li><a href='login.php'>Login</a></li>";
