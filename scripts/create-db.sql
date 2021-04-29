@@ -48,6 +48,12 @@ CREATE TABLE `Order` (
   FOREIGN KEY (cid) REFERENCES Customer (cid)
 );
 
+CREATE TABLE Cart (
+  cart_id INTEGER AUTO_INCREMENT PRIMARY KEY, -- will be used as order_number in relation to Book_to_Order
+  cid INTEGER NOT NULL, 
+  FOREIGN KEY (cid) REFERENCES Customer (cid)
+);
+
 CREATE TABLE Book_to_Order (
   bid INTEGER NOT NULL,
   order_number INTEGER NOT NULL,
