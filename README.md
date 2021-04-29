@@ -4,4 +4,5 @@
 
 ### Database Schema
 
-![Lucid Library - Database ER diagram](https://user-images.githubusercontent.com/32341666/115969688-3017f880-a50c-11eb-9c17-899d8a4c8123.png)
+![Lucid Shop - Database ER diagram](https://user-images.githubusercontent.com/32341666/116624228-94c0c200-a915-11eb-8a67-cb8c970eed30.png)
+
