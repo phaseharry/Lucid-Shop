@@ -57,7 +57,7 @@ CREATE TABLE Cart (
 CREATE TABLE Book_to_Cart (
   bid INTEGER NOT NULL,
   cart_id INTEGER NOT NULL,
-  units TINYINT,
+  units TINYINT NOT NULL DEFAULT 1,
   PRIMARY KEY (bid, cart_id),
   FOREIGN KEY (bid) REFERENCES Book (bid),
   FOREIGN KEY (cart_id) REFERENCES Cart (cart_id)
@@ -66,7 +66,7 @@ CREATE TABLE Book_to_Cart (
 CREATE TABLE Book_to_Order (
   bid INTEGER NOT NULL,
   order_number INTEGER NOT NULL,
-  count_ordered TINYINT,
+  count_ordered TINYINT NOT NULL,
   PRIMARY KEY (bid, order_number),
   FOREIGN KEY (bid) REFERENCES Book (bid),
   FOREIGN KEY (order_number) REFERENCES `Order` (order_number)
