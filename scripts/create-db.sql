@@ -54,6 +54,15 @@ CREATE TABLE Cart (
   FOREIGN KEY (cid) REFERENCES Customer (cid)
 );
 
+CREATE TABLE Book_to_Cart (
+  bid INTEGER NOT NULL,
+  cart_id INTEGER NOT NULL,
+  units TINYINT,
+  PRIMARY KEY (bid, cart_id),
+  FOREIGN KEY (bid) REFERENCES Book (bid),
+  FOREIGN KEY (cart_id) REFERENCES Cart (cart_id)
+);
+
 CREATE TABLE Book_to_Order (
   bid INTEGER NOT NULL,
   order_number INTEGER NOT NULL,
