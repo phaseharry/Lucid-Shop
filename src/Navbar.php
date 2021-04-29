@@ -50,12 +50,12 @@
 				if (isset($_COOKIE["customer_id"])) {
 					echo "<li><a href='order_history.php'>Order History</a></li>";
 					echo "<li><a href='#'>Log Out</a></li>";
+					echo "<li><a href='cart.php'>Cart</a></li>";
 				} else {
 					echo "<li><a href='login.php'>Login</a></li>";
 					echo "<li><a href='sign_up.php'>Sign Up</a></li>";
 				}
 				?>
-				<li><a href='cart.php'>Cart</a></li>
 			</ul>
 		</div>
 	</nav>
