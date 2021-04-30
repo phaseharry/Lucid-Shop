@@ -20,9 +20,9 @@ include "includes/add_to_cart.inc.php";
 		?>
 			<div>
 				<h4><?php echo $b["title"] ?></h4>
+				<img src='<?php echo $b["img_url"]; ?>' alt='<?php $b["title"]; ?>'>
 				<p><?php echo "Price:" . $b["unit_price"]; ?></p>
 				<p><?php echo "Author: " . $b["author_name"]; ?></p>
-				<img src='<?php echo $b["img_url"]; ?>' alt='<?php $b["title"]; ?>'>
 			</div>
 			<form method="POST" action="index.php" accept-charset="UTF-8">
 				<input type="hidden" name="book_id" value="<?php echo $b["bid"]; ?>">

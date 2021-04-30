@@ -40,3 +40,10 @@ SELECT B.title AS "book_title", B.img_url, B.unit_price, BTO.count_ordered
 FROM book_to_order BTO
 JOIN Book B ON BTO.bid = B.bid
 WHERE BTO.order_number = 3;
+
+-- Getting all books in a cart
+SELECT B.bid, B.title, B.unit_price, B.img_url, BtC.units 
+FROM Cart C
+JOIN Book_to_Cart BtC ON BtC.cart_id = C.cart_id
+JOIN Book B ON BtC.bid = B.bid
+WHERE C.cid = 1
