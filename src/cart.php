@@ -3,7 +3,7 @@ if (!isset($_COOKIE["customer_id"])) {
   header("Location: index.php");
 }
 include_once "../dbconnect.php";
-
+include "includes/edit_cart_.inc.php";
 ?>
 
 <!DOCTYPE html>
@@ -24,11 +24,9 @@ include_once "../dbconnect.php";
 <body>
   <h2>Cart</h2>
   <div>
-
     <?php
     $customer_id = $_COOKIE["customer_id"];
-    echo $customer_id;
-    $cart_query = " SELECT B.bid, B.title, B.unit_price, B.img_url, BtC.units ";
+    $cart_query = " SELECT B.bid, B.title, B.unit_price, B.img_url, BtC.units, C.cart_id ";
     $cart_query .= " FROM Cart C";
     $cart_query .= " JOIN Book_to_Cart BtC ON BtC.cart_id = C.cart_id";
     $cart_query .= " JOIN Book B ON BtC.bid = B.bid";
@@ -46,8 +44,13 @@ include_once "../dbconnect.php";
           <img src='<?php echo $b["img_url"]; ?>' alt='<?php $b["title"]; ?>'>
           <p><?php echo "Price:" . $b["unit_price"]; ?></p>
           <p>Copies: <?php echo $b["units"] ?></p>
-          <button>-</button>
-          <button>+</button>
+          <form method="POST" action="cart.php" accept-charset="UTF-8">
+            <input type="hidden" name="book_id" value="<?php echo $b["bid"]; ?>">
+            <input type="hidden" name="cart_id" value="<?php echo $b["cart_id"]; ?>">
+            <input type="hidden" name="unit_count" value="<?php echo $b["units"]; ?>">
+            <button type="submit" name="decrement_book_count" class="btn btn-default">-</button>
+            <button type="submit" name="increment_book_count" class="btn btn-default">+</button>
+          </form>
         </div>
       </div>
     <?php
