@@ -52,7 +52,6 @@ if ($_POST && isset($_POST["add-to-cart"]) && isset($_COOKIE["customer_id"])) {
     $book_to_cart_info = $result->fetch_all(MYSQLI_ASSOC)[0];
     $unit_count = $book_to_cart_info["units"];
     $unit_count += 1;
-    echo $unit_count;
     $update_book_to_cart_query = "UPDATE Book_to_Cart BtC SET BtC.units = ? WHERE BtC.bid = ? AND BtC.cart_id = ? ;";
     $update_book_to_cart_stmt = $conn->prepare($update_book_to_cart_query);
     $update_book_to_cart_stmt->bind_param("iii", $unit_count, $bid, $cid);

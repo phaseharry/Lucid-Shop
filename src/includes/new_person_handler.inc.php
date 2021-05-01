@@ -51,15 +51,14 @@ if ($_POST && isset($_POST['submit'])) {
 		/* Pregmatch a whole lot of stuff*/
 		if ((preg_match($S_pattern, $password)) && (preg_match('/[A-Z]/', $password)) && (preg_match('/[a-z]/', $password)) && (preg_match('/[\d]/', $password))) {
 			if (filter_var($username, FILTER_VALIDATE_EMAIL)) {
-
+				$hashed_password = password_hash($password, PASSWORD_DEFAULT);
 				//DO THING TO MAKE NEW PERSON in RECORD
-				$q =  "INSERT INTO Customer (cid, email, password, first_name, last_name, address, age, gender) VALUES (" . $cid . ",'" . $username . "','" . $password . "','" . $first_name . "','" . $last_name . "','" . $address . "'," . $age . ",'" . $gender . "')";
-				if ($conn->query($q) === TRUE) {
-					//THAN REDIRECT TO LOGIN SCREEN
-					header("Location: Login.php");
-				} else {
-					echo "Error";
-				}
+				$query =  "INSERT INTO Customer (cid, email, `password`, first_name, last_name, `address`, age, gender) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+				//$cid . ",'" . $username . "','" . $hashed_password . "','" . $first_name . "','" . $last_name . "','" . $address . "'," . $age . ",'" . $gender 
+				$stmt = $conn->prepare($query);
+				$stmt->bind_param("isssssis", $cid, $username, $hashed_password, $first_name, $last_name, $address, $age, $gender);
+				$stmt->execute();
+				header("Location: login.php");
 			} else {
 				$input['username'] = "Your Username does not meet the requirements";
 			}
