@@ -3,8 +3,6 @@ if ($_POST && isset($_POST["checkout"])) {
   $cart_id = $_POST["cart_id"];
   $customer_id = $_POST["customer_id"];
 
-  echo $cart_id;
-  echo $customer_id;
   // 1) fetch cart
   $fetch_cart_query = "SELECT B.bid, B.unit_price, BtC.units";
   $fetch_cart_query .= " FROM Cart C";
@@ -22,14 +20,27 @@ if ($_POST && isset($_POST["checkout"])) {
     $total_cost += ($btc["unit_price"] * $btc["units"]);
   }
   // 2) create order
-  $create_order_query = "INSERT INTO `Order` (cid, total_cost) VALUES (?, ?);";
+  $current_date = date("Y/m/d");
+  $create_order_query = "INSERT INTO `Order` (cid, total_cost, order_date) VALUES (?, ?, ?);";
   $create_order_stmt = $conn->prepare($create_order_query);
-  $create_order_stmt->bind_param("id", $customer_id, $total_cost);
+  $create_order_stmt->bind_param("ids", $customer_id, $total_cost, $current_date);
   $create_order_stmt->execute();
-  $result = $create_order_stmt->get_result();
-  var_dump($result);
-
+  $order_number = $create_order_stmt->insert_id;
   // 3) turn all book_to_cart's into book_to_order's
-
+  foreach ($book_to_cart_info as $btc) {
+    $bid = $btc["bid"];
+    $units_ordered = $btc["units"];
+    $book_to_order_query = "INSERT INTO Book_to_Order (bid, order_number, count_ordered) VALUES (?, ?, ?);";
+    $book_to_order_stmt = $conn->prepare($book_to_order_query);
+    $book_to_order_stmt->bind_param("iii", $bid, $order_number, $units_ordered);
+    $book_to_order_stmt->execute();
+    $book_to_order_id = $create_order_stmt->insert_id;
+  }
   // 4) delete cart
+  $delete_cart_query = "DELETE FROM Cart WHERE cart_id = ? ;";
+  $delete_cart_stmt = $conn->prepare($delete_cart_query);
+  $delete_cart_stmt->bind_param("i", $cart_id);
+  $delete_cart_stmt->execute();
+  $delete_cart_stmt->get_result();
+  header("Location: success.php");
 }
