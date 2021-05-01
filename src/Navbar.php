@@ -49,8 +49,13 @@
 				<?php
 				if (isset($_COOKIE["customer_id"])) {
 					echo "<li><a href='order_history.php'>Order History</a></li>";
-					echo "<li><a href='#'>Log Out</a></li>";
 					echo "<li><a href='cart.php'>Cart</a></li>";
+				?>
+					<form method="POST" action="login.php">
+						<input type="hidden" name="book_id" value="logout">
+						<button type="submit" name="logout">Log Out</button>
+					</form>
+				<?php
 				} else {
 					echo "<li><a href='login.php'>Login</a></li>";
 					echo "<li><a href='sign_up.php'>Sign Up</a></li>";
@@ -60,8 +65,5 @@
 		</div>
 	</nav>
 </div>
-
-<body>
-</body>
 
 </html>
