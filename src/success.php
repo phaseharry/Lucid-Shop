@@ -1,3 +1,5 @@
+<?php ?>
+
 <!DOCTYPE html>
 <html>
 <header>
@@ -6,7 +8,7 @@
   include "navbar.php";
   ?>
 </header>
-<div>
+<div class="container">
   <h1>YOUR ORDER WAS SUCCESSFUL!</h1>
 </div>
 
