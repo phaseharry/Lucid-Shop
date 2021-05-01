@@ -31,25 +31,11 @@ if ($_POST && isset($_POST['submit'])) {
 	if ($result->num_rows === 1) {
 		$temp_user = $result->fetch_all(MYSQLI_ASSOC)[0];
 		$hashed_password = $temp_user["password"];
-		echo $hashed_password;
-		echo "<br>";
-		echo $password;
-		echo "<br>";
-		var_dump($hashed_password);
-		var_dump($password);
-		$correct = password_verify($password, $hashed_password);
-		if ($correct) {
-			echo "correct";
-		} else {
-			echo "incorrect";
-		}
-
 		$user = password_verify($password, $hashed_password) ? $temp_user : null;
 	}
 
 	if (isset($user)) {
 		echo "user";
-		var_dump($user);
 		//set cookie
 		echo $user["email"];
 		setcookie("first_name", $user["first_name"], time() + 3600);

@@ -2,13 +2,13 @@ USE lucidshop;
 
 -- creating customer accounts
 INSERT INTO Customer (cid, email, password, first_name, last_name, `address`, age, gender) 
-VALUES (1, 'harrychen@gmail.com', '!abc123ABC', 'Harry', 'Chen', '0807 Hermann Underpass 73802', 24, 'male');
+VALUES (1, 'harrychen@gmail.com', '$2y$10$a5r8bL1O5cI2bhMADDnYSey46SjITiS2QJ2bLVwZqjv88tCO69vU2', 'Harry', 'Chen', '0807 Hermann Underpass 73802', 24, 'male'); -- plaintext password = !abc123ABC
 
 INSERT INTO Customer (cid, email, password, first_name, last_name, `address`, age, gender) 
-VALUES (2, 'raymondyu@icloud.com', 'Pa$$w0rd', 'Raymond', 'Yu', '882 Jessica Plains 00163', 21, 'male');
+VALUES (2, 'raymondyu@icloud.com', '$2y$10$E8hQucpVAB64yBG07qGi0esnXLo92x0Atxj3mWjGMiws8kBOJjpym', 'Raymond', 'Yu', '882 Jessica Plains 00163', 21, 'male'); -- plaintext password = Pa$$w0rd
 
 INSERT INTO Customer (cid, email, password, first_name, last_name, `address`, age, gender) 
-VALUES (3, 'yumeng@gmail.com', '!Swordfish1', 'Yumeng', 'Shao', '405 Gutmann Spur 34057-6397', 21, 'female');
+VALUES (3, 'yumeng@gmail.com', '$2y$10$8ldOfk5ZIKyxiDxec0bps.gzd1v5uzR7SFj.TXUduxGxfrrX/8BLK', 'Yumeng', 'Shao', '405 Gutmann Spur 34057-6397', 21, 'female'); -- plaintext password = !Swordfish1
 
 -- creating authors
 INSERT INTO Author (author_id, first_name, last_name) VALUES (1, 'Barack', 'Obama');
