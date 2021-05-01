@@ -40,7 +40,7 @@ include "navbar.php";
 <body>
 	<div class="container">
 		<h1>Sign Up</h1>
-		<form method="POST" action="SignUp.php" accept-charset="UTF-8">
+		<form method="POST" action="sign_up.php" accept-charset="UTF-8">
 			<p>
 				<label><b>First Name:</b></label>
 				<input type="text" name="first_name" size="20" maxlength="20" value="<?php echo (isset($_POST['first_name'])) ? $_POST['first_name'] : '' ?>">
