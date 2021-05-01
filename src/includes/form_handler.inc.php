@@ -35,7 +35,6 @@ if ($_POST && isset($_POST['submit'])) {
 	}
 
 	if (isset($user)) {
-		echo "user";
 		//set cookie
 		echo $user["email"];
 		setcookie("first_name", $user["first_name"], time() + 3600);
