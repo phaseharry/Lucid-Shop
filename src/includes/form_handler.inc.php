@@ -45,5 +45,4 @@ if ($_POST && isset($_POST['submit'])) {
 		$input['username'] = "Incorrect Password or Username!";
 		$input['password'] = "Incorrect Password or Username!";
 	}
-} else {
 }

@@ -1,6 +1,6 @@
 <?php
 
-if ($_POST) {
+if ($_POST && isset($_POST["increment_book_count"]) || isset($_POST["decrement_book_count"])) {
   $book_id = $_POST["book_id"];
   $cart_id = $_POST["cart_id"];
   $units_in_cart = $_POST["unit_count"];

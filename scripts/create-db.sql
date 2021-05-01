@@ -60,7 +60,9 @@ CREATE TABLE Book_to_Cart (
   units TINYINT NOT NULL DEFAULT 1,
   PRIMARY KEY (bid, cart_id),
   FOREIGN KEY (bid) REFERENCES Book (bid),
-  FOREIGN KEY (cart_id) REFERENCES Cart (cart_id)
+  FOREIGN KEY (cart_id) 
+    REFERENCES Cart (cart_id) 
+    ON DELETE CASCADE
 );
 
 CREATE TABLE Book_to_Order (

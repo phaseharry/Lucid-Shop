@@ -4,6 +4,7 @@ if (!isset($_COOKIE["customer_id"])) {
 }
 include_once "../dbconnect.php";
 include "includes/edit_cart_.inc.php";
+include "includes/checkout.inc.php";
 ?>
 
 <!DOCTYPE html>
@@ -56,6 +57,11 @@ include "includes/edit_cart_.inc.php";
     <?php
     }
     ?>
+    <form method="POST" action="cart.php">
+      <input type="hidden" name="cart_id" value="<?php echo $b["cart_id"]; ?>">
+      <input type="hidden" name="customer_id" value="<?php echo $customer_id; ?>">
+      <button type="submit" name="checkout" class="btn btn-default">Checkout</button>
+    </form>
   </div>
 </body>
 
