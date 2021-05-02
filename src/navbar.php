@@ -11,7 +11,7 @@
 </head>
 <div class="container">
 	<div class="jumbotron">
-		<h2>Lucid Shop (Insert some stock Image here)</h2>
+		<h2>Lucid Shop</h2>
 	</div>
 </div>
 <div class="container">
