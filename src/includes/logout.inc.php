@@ -5,3 +5,4 @@ if ($_POST && isset($_POST["logout"])) {
   setcookie("customer_id", "", time() - 3600);
   header("Location: login.php");
 }
+?>
