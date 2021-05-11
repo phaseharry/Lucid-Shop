@@ -22,7 +22,7 @@ if ($_POST && isset($_POST['submit'])) {
 	$username = sanitize($_POST['username']);
 	$password = sanitize($_POST['password']);
 
-	$q = "SELECT first_name, email, cid, `password` FROM customer WHERE email = ? LIMIT 1";
+	$q = "SELECT first_name, email, cid, `password` FROM Customer WHERE email = ? LIMIT 1";
 	$stmt = $conn->prepare($q);
 	$stmt->bind_param("s", $username);
 	$stmt->execute();

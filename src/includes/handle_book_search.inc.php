@@ -6,7 +6,7 @@ if ($_POST && isset($_POST["submit"]) && $_POST["user-input"]) {
   define("AUTHOR", "Author");
   define("CATEGORY", "Category");
   define("PUBLISHER", "Publisher");
-  $query = "SELECT B.bid, B.title, B.img_url, B.unit_price, CONCAT(A.first_name, ' ', a.last_name) AS author_name";
+  $query = "SELECT B.bid, B.title, B.img_url, B.unit_price, CONCAT(A.first_name, ' ', A.last_name) AS author_name";
   $books = [];
   if ($_POST["attribute"] === TITLE) { // find books by title
     $title = $_POST['user-input'];
@@ -22,7 +22,7 @@ if ($_POST && isset($_POST["submit"]) && $_POST["user-input"]) {
     $author_name = $_POST['user-input'];
     $query .= " FROM Author A";
     $query .= " JOIN Book B ON B.author_id = A.author_id";
-    $query .= " WHERE A.first_name = ? OR A.last_name = ? OR CONCAT(A.first_name, ' ', a.last_name) = ? ;";
+    $query .= " WHERE A.first_name = ? OR A.last_name = ? OR CONCAT(A.first_name, ' ', A.last_name) = ? ;";
     $stmt = $conn->prepare($query);
     $stmt->bind_param("sss", $author_name, $author_name, $author_name);
     $stmt->execute();
@@ -55,7 +55,7 @@ if ($_POST && isset($_POST["submit"]) && $_POST["user-input"]) {
   $output['books'] = $books;
 } else {
   // fetch all books
-  $fetch_all_books = "SELECT B.bid, B.title, B.img_url, B.unit_price, CONCAT(A.first_name, ' ', a.last_name) AS author_name";
+  $fetch_all_books = "SELECT B.bid, B.title, B.img_url, B.unit_price, CONCAT(A.first_name, ' ', A.last_name) AS author_name";
   $fetch_all_books .= " FROM Book B";
   $fetch_all_books .= " JOIN Author A ON B.author_id = A.author_id;";
 
